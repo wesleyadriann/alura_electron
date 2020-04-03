@@ -1,0 +1,8 @@
+{
+  "name": "alura_electron",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/WesleyAdriann/alura_electron.git",
+  "author": "Wesley <wesleyadriann@gmail.com>",
+  "license": "MIT"
+}
