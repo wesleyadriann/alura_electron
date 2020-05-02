@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF=8">
-    <title>Alura Electron</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <meta charset="UTF-8">
+    <title>Alura Timer</title>
+    <link rel="stylesheet" href="styles/index.css">
   </head>
   <body>
-    <h1>Welcome to Electron</h1>
-    <a href="#" id="link-about">Sobre</a>
-    <script src="js/render.js"></script>
-
+    <section class="container">
+      <div id="link-sobre">
+        <img class="info-button" src="assets/images/info-button.svg">
+      </div>
+      <h1 class="titulo">Alura Timer</h1>
+      <div class="timer">
+        <div class="relogio">
+          <span class="tempo">00:10:23</span>
+        </div>
+        <div class='controles'>
+          <img class="botao-play" src="assets/images/play-button.svg">
+        </div>
+        <div class="curso-container">
+          <span class="curso">logica-programação</span>
+        </div>
+      </div>
+    </section>
+    <script>require('./js/renderer')</script>
   </body>
 </html>

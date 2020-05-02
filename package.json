@@ -9,6 +9,7 @@
   "author": "Wesley <wesleyadriann@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "electron": "^8.2.0"
+    "electron": "^8.2.0",
+    "moment": "^2.25.1"
   }
 }

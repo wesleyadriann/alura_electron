@@ -9,7 +9,7 @@ app.on('ready', () => {
         webPreferences: {
           nodeIntegration: true
         },
-        width: 600,
+        width: 750,
         height: 400
     });
 
@@ -23,7 +23,7 @@ app.on('window-all-closed', () => app.quit());
 
 
 let aboutWindow = null;
-ipcMain.on('open_window_about', () => {
+ipcMain.on('abrir-janela-sobre', () => {
   if(aboutWindow === null) {
     aboutWindow = new BrowserWindow({
       webPreferences: {
@@ -39,9 +39,9 @@ ipcMain.on('open_window_about', () => {
     })
   }
 
-  aboutWindow.loadFile(`${__dirname}/app/about.html`);
+  aboutWindow.loadFile(`${__dirname}/app/sobre.html`);
 })
 
-ipcMain.on('close_window_about', () => {
+ipcMain.on('fechar-janela-sobre', () => {
   aboutWindow.close();
 })
