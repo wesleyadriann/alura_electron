@@ -1,21 +1,22 @@
 const {
-    app,
-    BrowserWindow,
-    ipcMain,
+  app,
+  BrowserWindow,
+  ipcMain,
+  ipcRenderer,
 } = require('electron');
 
+const Data = require('./Data');
+
 app.on('ready', () => {
-    const mainWindow = new BrowserWindow({
-        webPreferences: {
-          nodeIntegration: true
-        },
-        width: 750,
-        height: 400
-    });
+  const mainWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true
+    },
+    width: 750,
+    height: 400
+  });
 
-    mainWindow.loadFile(`${__dirname}/app/index.html`);
-
-
+  mainWindow.loadFile(`${__dirname}/app/index.html`);
 })
 
 
@@ -24,7 +25,7 @@ app.on('window-all-closed', () => app.quit());
 
 let aboutWindow = null;
 ipcMain.on('abrir-janela-sobre', () => {
-  if(aboutWindow === null) {
+  if (aboutWindow === null) {
     aboutWindow = new BrowserWindow({
       webPreferences: {
         nodeIntegration: true,
@@ -44,4 +45,8 @@ ipcMain.on('abrir-janela-sobre', () => {
 
 ipcMain.on('fechar-janela-sobre', () => {
   aboutWindow.close();
+})
+
+ipcMain.on('curso-parado', (event, curso, tempo) => {
+  Data.salvaDados(curso, tempo);
 })
